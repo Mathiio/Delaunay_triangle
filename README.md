@@ -74,3 +74,34 @@ Your program should then compile, run, and output "Hello World!"
 
 Put all your C++ files (*.cpp* and *.hpp*) in the `src` folder.
 This is where the `CMakeLists.txt` is configured to look for them.
+
+
+
+
+## Details
+Ne compléter que la fonction construction
+
+
+Trier les points selon x
+    std::sort(app.points.begin(), app.points.end(), compareCoords);
+
+Vider la liste existante de triangles
+Créer un trés grand triangle (-1000, -1000); (500, 3000); (1500, -1000)
+    Le rajouter à la liste de triangles déjà créés
+
+Pour chaque point P du repère:
+    créer une liste de segments LS
+    Pour chaque triangle T déjà créé:
+        tester si le cercle circonscrit contient le point P
+        Dans ce cas:
+            Récupérer les différents segments de ce triangles dans LS
+            Enlever le triangke T de la liste 
+
+    Pour chaque segment S de la liste LS:
+        si un segment partage ses points avec d'autres segments
+        (segment1.p1 == segment2.p2) && (segment1.p2 == segment2.p1)
+        Dans ce cas:
+            le virer
+
+    Pour chaque segment S de la liste LS:
+        créer un nouveau triangle composé du segment S et du point P

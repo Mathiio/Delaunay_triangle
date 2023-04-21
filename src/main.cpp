@@ -157,7 +157,13 @@ bool CircumCircle(
 
 void construitVoronoi(Application &app)
 {
-    
+    std::sort(app.points.begin(), app.points.end(), compareCoords);
+    app.triangles.clear();
+    app.triangles.push_back({{-1000, -1000}, {500, 3000}, {1500, -1000}});
+
+    // if(app.points.size()==3){
+    //     app.triangles.push_back({app.points[0], app.points[1], app.points[2]});
+    // }
 }
 
 bool handleEvent(Application &app)
