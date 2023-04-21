@@ -38,6 +38,15 @@ struct Application
     std::vector<Triangle> triangles;
 };
 
+
+void swapTriangles(std::vector<Triangle>& triangles, int i, int j) {
+    std::swap(triangles[i], triangles[j]);
+}
+
+void swapSegments(std::vector<Segment>& segments, int i, int j) {
+    std::swap(segments[i], segments[j]);
+}
+
 bool compareCoords(Coords point1, Coords point2)
 {
     if (point1.y == point2.y)
@@ -157,22 +166,42 @@ bool CircumCircle(
 
 void construitVoronoi(Application &app)
 {
+    float posxCentre, posyCentre, rayon;
+    int countSegments = 0;
     std::sort(app.points.begin(), app.points.end(), compareCoords);
     app.triangles.clear();
     app.triangles.push_back({{-1000, -1000}, {500, 3000}, {1500, -1000}});
 
     for(int i=0; i<app.points.size(); i++){
-        Segment segments[100];
-        segments[i] = {app.points[i], app.points[i]};
+        Segment LS[100];
         for(int j=0; j<app.triangles.size(); j++){
-            if(CircumCircle(app.points[i].x, app.points[i].y, app.triangles[j].p1, app.triangles[j].p2, app.triangles[j].p3)){
-
+            if(CircumCircle(app.points[i].x, app.points[i].y, 
+            app.triangles[j].p1.x, app.triangles[j].p1.y, 
+            app.triangles[j].p2.x, app.triangles[j].p2.y, 
+            app.triangles[j].p3.x, app.triangles[j].p3.y,
+            &posxCentre, &posyCentre, &rayon)){
+                LS[countSegments] = {app.triangles[j].p1, app.triangles[j].p2};
+                countSegments++;
+                LS[countSegments] = {app.triangles[j].p2, app.triangles[j].p3};
+                countSegments++;
+                LS[countSegments] = {app.triangles[j].p1, app.triangles[j].p3};
+                countSegments++;
+                swapTriangles(app.triangles, j, (app.triangles.size()-1));
+                app.triangles.pop_back();
             }
         }
+        for(int k=0; k<countSegments; k++) {
+            for (int l = 0; l < countSegments; l++){
+                if((LS[k].p1 == LS[l].p2) && (LS[k].p2 == LS[l].p1)) {
+                    swapSegments(LS, k, l);
+            // Si un segment partage ses points avec un autre segement :
+            // if((segment1.p1 == segment2.p2) && (segment1.p2 == segment2.p1))
+                // Dans ce cas, le supprimer 
+            }    
+        }
+        // Pour chaque segment de la liste LS
+            // Créer un nouveau triangle composé du segment S et du point P
     }
-    // if(app.points.size()==3){
-    //     app.triangles.push_back({app.points[0], app.points[1], app.points[2]});
-    // }
 }
 
 bool handleEvent(Application &app)
