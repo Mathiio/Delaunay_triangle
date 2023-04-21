@@ -161,6 +161,15 @@ void construitVoronoi(Application &app)
     app.triangles.clear();
     app.triangles.push_back({{-1000, -1000}, {500, 3000}, {1500, -1000}});
 
+    for(int i=0; i<app.points.size(); i++){
+        Segment segments[100];
+        segments[i] = {app.points[i], app.points[i]};
+        for(int j=0; j<app.triangles.size(); j++){
+            if(CircumCircle(app.points[i].x, app.points[i].y, app.triangles[j].p1, app.triangles[j].p2, app.triangles[j].p3)){
+
+            }
+        }
+    }
     // if(app.points.size()==3){
     //     app.triangles.push_back({app.points[0], app.points[1], app.points[2]});
     // }
