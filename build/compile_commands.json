@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/build",
+  "command": "/usr/bin/clang  -I/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/src -I/opt/homebrew/include -isystem /opt/homebrew/include/SDL2 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wall -Wextra -Wpedantic -o CMakeFiles/VoronoiApp.dir/src/SDL2_gfxPrimitives.c.o -c /Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/src/SDL2_gfxPrimitives.c",
+  "file": "/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/src/SDL2_gfxPrimitives.c"
+},
+{
+  "directory": "/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/build",
+  "command": "/usr/bin/clang++  -I/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/src -I/opt/homebrew/include -isystem /opt/homebrew/include/SDL2 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wall -Wextra -Wpedantic -std=c++17 -o CMakeFiles/VoronoiApp.dir/src/application_ui.cpp.o -c /Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/src/application_ui.cpp",
+  "file": "/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/src/application_ui.cpp"
+},
+{
+  "directory": "/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/build",
+  "command": "/usr/bin/clang++  -I/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/src -I/opt/homebrew/include -isystem /opt/homebrew/include/SDL2 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wall -Wextra -Wpedantic -std=c++17 -o CMakeFiles/VoronoiApp.dir/src/main.cpp.o -c /Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/src/main.cpp",
+  "file": "/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/src/main.cpp"
+}
+]

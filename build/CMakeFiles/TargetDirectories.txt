@@ -1,0 +1,3 @@
+/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/build/CMakeFiles/VoronoiApp.dir
+/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/build/CMakeFiles/edit_cache.dir
+/Users/matheo/Documents/IMAC/S2/Prog-Algo/Delaunay_triangle/build/CMakeFiles/rebuild_cache.dir
