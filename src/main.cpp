@@ -43,7 +43,7 @@ void swapTriangles(std::vector<Triangle>& triangles, int i, int j) {
     std::swap(triangles[i], triangles[j]);
 }
 
-void swapSegments(std::vector<Segment>& segments, int i, int j) {
+void swapSegments(Segment segments[], int i, int j) {
     std::swap(segments[i], segments[j]);
 }
 
@@ -194,13 +194,14 @@ void construitVoronoi(Application &app)
             for (int l = 0; l < countSegments; l++){
                 if((LS[k].p1 == LS[l].p2) && (LS[k].p2 == LS[l].p1)) {
                     swapSegments(LS, k, l);
-            // Si un segment partage ses points avec un autre segement :
-            // if((segment1.p1 == segment2.p2) && (segment1.p2 == segment2.p1))
-                // Dans ce cas, le supprimer 
+                    LS.pop();
+                    countSegments--;
+                }
             }    
         }
-        // Pour chaque segment de la liste LS
-            // Créer un nouveau triangle composé du segment S et du point P
+        for(int l=0; l<countSegments; l++) {
+            app.triangles.push_back({LS[l].p1, LS[l].p2, app.points[i]});
+        }
     }
 }
 
